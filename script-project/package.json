@@ -1,0 +1,15 @@
+{
+  "name": "ginco-project",
+  "version": "1.0.0",
+  "description": "A project for processing cryptocurrency transactions and balances.",
+  "main": "src/ginco.js",
+  "scripts": {
+    "start": "node src/ginco.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.21.2"
+  },
+  "author": "",
+  "license": "ISC"
+}
