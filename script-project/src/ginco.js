@@ -19,6 +19,7 @@ async function processData() {
         const transactions = transactionsResponse.data.transactions;
 
         // Process initial balances
+        // create a key on the basis of address_coin and store value in it 
         const balances = {};
         for (const state of initialState) {
             if (!balances[`${state.address}_${state.coin}`]) {
@@ -56,29 +57,24 @@ async function processData() {
             balances[balanceFromkey] -= fee;
         }
 
+        // Precompute maximum transactions for each coin
+        const maxTransactions = {};
+        for (const tx of transactions) {
+            const coin = tx.coin;
+            const amount = parseFloat(tx.value);
+            if (!maxTransactions[coin] || amount > maxTransactions[coin].value) {
+                maxTransactions[coin] = tx;
+            }
+        }
+
         // Implement the required functions
         function getCurrentBalance(address, coin) {
-            const key = `${address}_${coin}`
+            const key = `${address}_${coin}`;
             return balances[key] || 0;
         }
 
         function getMaxTransaction(coin) {
-            let maxTx = null;
-            let maxAmount = 0;
-            
-            for (const tx of transactions){
-                if (tx.coin == coin) {
-                    console.log(tx.coin, coin, tx.value)
-                    const amount = parseFloat(tx.value);
-                    if (amount > maxAmount) {
-                        maxAmount = amount;
-                        maxTx = tx;
-                    }
-                }
-            } 
-            
-            
-            return maxTx;
+            return maxTransactions[coin] || null;
         }
 
         // Start Express server
@@ -107,7 +103,8 @@ async function processData() {
         return {
             getCurrentBalance,
             getMaxTransaction,
-            balances // exposing balances for testing
+            balances, // exposing balances for testing
+            maxTransactions // exposing maxTransactions for testing
         };
 
     } catch (error) {
