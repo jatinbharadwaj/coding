@@ -4,7 +4,7 @@
   "description": "A project for processing cryptocurrency transactions and balances.",
   "main": "src/ginco.js",
   "scripts": {
-    "start": "node src/ginco.js"
+    "start": "node src/app.js"
   },
   "dependencies": {
     "axios": "^0.21.1",
