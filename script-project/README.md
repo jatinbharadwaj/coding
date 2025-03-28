@@ -1,6 +1,5 @@
 # Ginco Project (Go Version)
 
-
 1. **Initial Balances (`current_state.json`)**: This dataset provides the current balance for several addresses across Bitcoin, 
 Dogecoin, and TON. 
 
@@ -8,6 +7,7 @@ Dogecoin, and TON.
 Transactions (transactions.json): This dataset contains 1,000 transactions for different addresses in the system.
 1. getCurrentBalance(address,coin)
 2. getMaxTransaction(coin)
+3. getKthMaxTransaction(coin,k)
 https://www.jsonkeeper.com/b/K4PX
 https://www.jsonkeeper.com/b/ILH9
 
