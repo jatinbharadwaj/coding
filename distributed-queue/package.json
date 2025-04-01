@@ -1,0 +1,19 @@
+{
+  "name": "distributed-queue",
+  "version": "1.0.0",
+  "description": "Design an In-Memory Distributed Queue like Kafka.",
+  "main": "service.js",
+  "scripts": {
+    "test": "npm run service.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "jatin",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.8.4",
+    "express": "^5.1.0"
+  }
+}
