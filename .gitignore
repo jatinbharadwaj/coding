@@ -1,3 +1,4 @@
 
 /go
 *node_modules
+*go.mod
