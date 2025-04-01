@@ -1,0 +1,16 @@
+{
+  "name": "snake-and-ladder-lld",
+  "version": "1.0.0",
+  "description": "snake and ladder classical game",
+  "main": "service.js",
+  "scripts": {
+    "test": "npm run test",
+    "start": "node service.js"
+  },
+  "author": "jatin bhardwaj",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.8.4",
+    "express": "^5.1.0"
+  }
+}
