@@ -1,0 +1,11 @@
+{
+  "name": "chess-validator-lld",
+  "version": "1.0.0",
+  "description": "A chess validator lld",
+  "main": "service.js",
+  "scripts": {
+    "test": "node service.js"
+  },
+  "author": "jatin",
+  "license": "ISC"
+}
